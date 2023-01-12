@@ -1,6 +1,16 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1,num2) {
 
+if (num1 > num2){
+  return num1
+}
+else if ( num1 < num2){
+  return num2
+}
+else {
+  return num1
+}
+}
 
 
 // Iteration #2: Find longest word
@@ -51,6 +61,9 @@ function sumNumbers(arr) {
 sumNumbers(numbers)
 
 // Iteration #3.1 Bonus:
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
 function sum(arr) {
   if (arr.length === 0 ){
     return 0;
@@ -64,15 +77,25 @@ function sum(arr) {
   })
   return sum
 }
-else if (arr.some(isNaN)){
-  let stringSum= ``
+ else if (arr.some(isNaN)){
+  let stringSum= 0
   arr.forEach(function(string){
+  stringSum += string.length
+})
+return stringSum
+}
 
-    stringSum= Number(Array)
-  })
-  return stringSum;
+let mixedSum = 0
+arr.forEach(function(mixed){
+  if ( typeof mixed === `string`){
+    mixedSum += mixed.length
+  }
+  else if  (typeof mixed === `number`){
+    mixedSum += mixed
+  }
+  return mixedSum
 
- }
+})
 
 }
 
@@ -154,7 +177,24 @@ uniquifyArray(wordsUnique)
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+
+function doesWordExist(arr, wordSearch) {
+if (arr.length === 0 ){
+  return null;
+}
+else if (arr.length === 1){
+  return true;
+}
+for (i=0 ; i<arr.length ; i++){
+  if (arr[i] === wordSearch){
+    return true
+  }
+}
+return false
+}
+
+doesWordExist(wordsFind, `trouble`)
+
 
 
 
@@ -173,7 +213,33 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr,search) {
+if (arr.length === 0 ){
+  return 0;
+}
+
+let counter = 0
+/*arr.forEach(function(word){
+  if (word=== wordSearch){
+    counter += 1
+  }
+})
+*/
+
+for (i=0 ; i<arr.length ; i++){
+ if ( arr[i] === search){
+  counter++
+ }
+
+}
+return counter
+}
+
+
+
+
+howManyTimes(wordsCount, `matter`)
+
 
 
 
@@ -202,6 +268,7 @@ const matrix = [
 ];
 
 function greatestProduct() {}
+
 
 
 
